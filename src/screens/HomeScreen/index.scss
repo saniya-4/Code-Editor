@@ -1,0 +1,43 @@
+.home-container{
+     
+    height:100vh;
+    display:grid;
+    grid-template-columns:2fr 3fr;
+
+    .left-container
+    {
+      background-color:#1E1E1E;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:white;
+    }
+    .items-container{
+      
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:15px;
+      h2{
+        color:rgb(216,211,211);
+      }
+       button{
+        cursor:pointer;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        height:50px;
+        width:90%;
+        border-radius:25px;
+        border:none;
+        font-size:20px;
+        
+       }
+      button:hover{
+        box-shadow:2px 2px 6px grey;
+        transition:1s;
+      
+      }
+
+    }
+}
