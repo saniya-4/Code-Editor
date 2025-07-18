@@ -1,10 +1,12 @@
 import { ModalContext } from "../../../Providers/ModalProvider";
 import { modalConstants } from "../../../Providers/ModalProvider";
+import {useNavigate} from "react-router-dom"
 import "./index.scss";
 import { PlaygroundContext } from "../../../Providers/PlaygroundProvider";
 import React, {useContext} from "react";
 const Folder=({folderTitle,cards,folderId })=>
 {
+    const navigate=useNavigate();
     const {deleteFolder,deleteFile}=useContext(PlaygroundContext);
     const {openModal,setModalPayload}=useContext(ModalContext)
   
@@ -59,7 +61,9 @@ const Folder=({folderTitle,cards,folderId })=>
         }
         const navigateToPlaygroundScreen=()=>
         {
-            console.log({fileId:file.id},{folderId})
+            // console.log({fileId:file.id},{folderId})
+            navigate(`/playground/${file.id}/${folderId}`);
+
         }
        return (
         <div className="card" key={index} onClick={navigateToPlaygroundScreen}>
